@@ -1,0 +1,50 @@
+// Variables
+$light: #F4F4F9;
+$dark: #273E47;
+$accent: #3BA3A1;
+
+// Base styling
+:host
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Introduction
+#introduction
+{
+  display: flex;
+  align-items: center;
+
+  #introduction-left
+  {
+    width: 40ch;
+
+    h4
+    {
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  img
+  {
+    width: 30rem;
+  }
+}
+
+// About me
+#about-me
+{
+  width: 65ch;
+  text-align: center;
+
+  hr
+  {
+    margin: 1.5rem auto;
+    width: 10ch;
+    border: none;
+    border-top: 1px solid rgba($dark, .6);
+  }
+}
