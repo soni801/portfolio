@@ -23,8 +23,36 @@ $accent: #3BA3A1;
 
     h4
     {
+      // Values for dash size
+      $dash-length: 12px;
+      $dash-gap: 4px;
+
+      position: relative;
+      left: $dash-length + $dash-gap; // Offset for dash
       font-weight: normal;
       text-transform: uppercase;
+
+      // Dash at start of line
+      &::before
+      {
+        content: '';
+        display: block;
+        position: absolute;
+        top: .75rem;
+        left: -($dash-length + $dash-gap);
+        width: $dash-length;
+        border-top: 1px solid $dark;
+      }
+    }
+
+    #about-me-button
+    {
+      padding: .6em 1.3em;
+      background: $accent;
+      color: $light;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
     }
   }
 
