@@ -16,6 +16,7 @@ $accent: #3BA3A1;
 {
   display: flex;
   align-items: center;
+  gap: 8rem;
 
   #introduction-left
   {
@@ -29,6 +30,7 @@ $accent: #3BA3A1;
 
       position: relative;
       left: $dash-length + $dash-gap; // Offset for dash
+      margin: 0;
       font-weight: normal;
       text-transform: uppercase;
 
@@ -43,6 +45,11 @@ $accent: #3BA3A1;
         width: $dash-length;
         border-top: 1px solid $dark;
       }
+    }
+
+    h1
+    {
+      margin: 0;
     }
 
     #about-me-button
@@ -65,7 +72,8 @@ $accent: #3BA3A1;
 // About me
 #about-me
 {
-  width: 65ch;
+  margin: 1rem;
+  max-width: 65ch;
   text-align: center;
 
   hr
