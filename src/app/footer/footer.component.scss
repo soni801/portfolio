@@ -1,0 +1,54 @@
+// Variables
+$light: #F4F4F9;
+$darker: #BEBEC7;
+$dark: #273E47;
+$accent: #3BA3A1;
+
+:host
+{
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  margin-top: 1rem;
+  width: 100%;
+  background: $darker;
+}
+
+div
+{
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  margin: 1rem 0;
+
+  h4
+  {
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+
+  a
+  {
+    // Symbol offset
+    $symbol-offset: 1rem;
+
+    position: relative;
+    left: $symbol-offset;
+    color: currentColor; // Unset link color
+
+    // '>' symbol in front of link
+    &::before
+    {
+      content: '>';
+      position: absolute;
+      top: 50%;
+      left: -$symbol-offset;
+      color: lighten($dark, 20);
+      font-weight: 600;
+      font-size: 1.2em;
+      transform: translateY(-50%);
+    }
+  }
+}
