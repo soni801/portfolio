@@ -64,5 +64,12 @@ div
       font-size: 1.2em;
       transform: translateY(-50%);
     }
+
+    // External link symbol
+    span
+    {
+      position: absolute;
+      transform: scale(.7);
+    }
   }
 }
