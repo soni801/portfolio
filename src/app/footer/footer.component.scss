@@ -1,8 +1,5 @@
-// Variables
-$light: #F4F4F9;
-$darker: #BEBEC7;
-$dark: #273E47;
-$accent: #3BA3A1;
+// Import shared styling
+@use '../../shared';
 
 :host
 {
@@ -11,7 +8,7 @@ $accent: #3BA3A1;
   gap: 10rem;
   margin-top: 1rem;
   width: 100%;
-  background: $darker;
+  background: shared.$medium;
 }
 
 div
@@ -45,7 +42,7 @@ div
       position: absolute;
       top: 50%;
       left: -$symbol-offset;
-      color: lighten($dark, 20);
+      color: shared.$accent;
       font-weight: 600;
       font-size: 1.2em;
       transform: translateY(-50%);

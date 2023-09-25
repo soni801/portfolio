@@ -1,7 +1,5 @@
-// Variables
-$light: #F4F4F9;
-$dark: #273E47;
-$accent: #3BA3A1;
+// Import shared styling
+@use '../../shared';
 
 // Base styling
 :host
@@ -43,7 +41,7 @@ $accent: #3BA3A1;
         top: .75rem;
         left: -($dash-length + $dash-gap);
         width: $dash-length;
-        border-top: 1px solid $dark;
+        border-top: 1px solid shared.$dark;
       }
     }
 
@@ -55,8 +53,8 @@ $accent: #3BA3A1;
     #about-me-button
     {
       padding: .6em 1.3em;
-      background: $accent;
-      color: $light;
+      background: shared.$accent;
+      color: shared.$light;
       font-weight: 600;
       text-transform: uppercase;
       text-decoration: none;
@@ -81,6 +79,6 @@ $accent: #3BA3A1;
     margin: 1.5rem auto;
     width: 10ch;
     border: none;
-    border-top: 1px solid rgba($dark, .6);
+    border-top: 1px solid rgba(shared.$dark, .6);
   }
 }
