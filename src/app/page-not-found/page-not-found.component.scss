@@ -7,15 +7,25 @@
   height: 100vh;
 }
 
+// '404' text
 h1
 {
   margin: 0;
-  font-size: 40vh;
+  font-size: clamp(1rem, 40vw, 40vh);
   line-height: 1em;
 }
 
+// 'Page not found' text
 h2
 {
   margin: 0;
   font-size: 3rem;
+  text-align: center;
+}
+
+// Other text
+p
+{
+  padding: 1rem;
+  text-align: center;
 }

@@ -9,16 +9,30 @@
   align-items: center;
 }
 
-// Introduction
+// Introduction (small paragraph and image)
 #introduction
 {
   display: flex;
   align-items: center;
-  gap: 8rem;
 
+  // Display introduction vertically on smaller screens
+  @media (max-width: 950px)
+  {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  // On larger screens, create a gap between the paragraph on the left and the image
+  @media (min-width: 1100px)
+  {
+    gap: 15vw;
+  }
+
+  // Small paragraph
   #introduction-left
   {
-    width: 40ch;
+    padding: 1rem;
+    max-width: 40ch;
 
     h4
     {
@@ -61,9 +75,10 @@
     }
   }
 
+  // Image to the right
   img
   {
-    width: 30rem;
+    width: clamp(1rem, 90vw, 30rem);
   }
 }
 
