@@ -1,0 +1,32 @@
+// Import shared styling
+@use "../../shared";
+
+:host
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#social-media
+{
+  display: flex;
+  gap: 1.5rem;
+
+  // Social media links
+  a
+  {
+    padding: .5em 1.3em;
+    background: shared.$medium;
+    color: shared.$dark;
+    text-decoration: none;
+    border-radius: 1rem;
+  }
+}
+
+// Put footer at the bottom
+app-footer
+{
+  position: absolute;
+  bottom: 0;
+}
