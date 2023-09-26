@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
 }
 
 // '404' text
@@ -13,6 +12,7 @@ h1
   margin: 0;
   font-size: clamp(1rem, 40vw, 40vh);
   line-height: 1em;
+  pointer-events: none; // For some reason, the collision box extends beyond the object size. This fixes that.
 }
 
 // 'Page not found' text

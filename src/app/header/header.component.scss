@@ -1,0 +1,29 @@
+// Import shared styling
+@use '../../shared';
+
+// Styling on the header itself
+:host
+{
+  display: flex;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+// Link styling
+a
+{
+  color: shared.$dark;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .10ch;
+  transition: 50ms ease;
+}
+
+// Selected page
+.selected
+{
+  color: shared.$accent;
+  font-weight: 900;
+}

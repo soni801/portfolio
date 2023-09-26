@@ -1,0 +1,7 @@
+// Display the page as a flexbox
+:host
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
