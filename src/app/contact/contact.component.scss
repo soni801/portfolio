@@ -1,16 +1,20 @@
 // Import shared styling
 @use "../../shared";
 
+// Set the page itself as flex
 :host
 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
 }
 
 #social-media
 {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.5rem;
 
   // Social media links

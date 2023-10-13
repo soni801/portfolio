@@ -87,7 +87,12 @@
 {
   margin: 1rem;
   max-width: 65ch;
-  text-align: center;
+
+  // Center align text on larger screens
+  @media (min-width: 680px)
+  {
+    text-align: center;
+  }
 
   hr
   {

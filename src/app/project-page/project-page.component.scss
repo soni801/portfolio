@@ -5,13 +5,25 @@
   align-items: center;
 }
 
+// Apply some padding to all elements to display nicer on smaller screens
+*
+{
+  padding: 1rem;
+}
+
 span
 {
-  font-size: 10rem;
+  // Use clamp to properly scale down on smaller screens
+  font-size: clamp(1rem, 100vw, 10rem);
 }
 
 p
 {
   max-width: 60ch;
-  text-align: center;
+
+  // Center align text on larger screens
+  @media (min-width: 500px)
+  {
+    text-align: center;
+  }
 }
