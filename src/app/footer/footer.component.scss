@@ -7,10 +7,12 @@
   display: flex;
   justify-content: center;
   gap: clamp(7rem, 12vw, 20rem); // Dynamically change size, but have a minimum and maximum value
-  margin-top: 1rem;
   padding: 1rem 2rem;
   width: calc(100% - 4rem);
   background: shared.$medium;
+
+  // Push the footer to the bottom if there isn't enough content
+  margin-top: auto;
 
   // Display vertically on smaller screens
   @media (max-width: 780px)
