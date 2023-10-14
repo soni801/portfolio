@@ -10,6 +10,18 @@
   padding: 1rem;
 }
 
+// Introduction paragraph
+p
+{
+  max-width: 70ch;
+
+  // Center align text on larger screens
+  @media (min-width: 500px)
+  {
+    text-align: center;
+  }
+}
+
 #social-media
 {
   display: flex;
@@ -28,9 +40,7 @@
   }
 }
 
-// Put footer at the bottom
-app-footer
+#get-in-touch-email
 {
-  position: absolute;
-  bottom: 0;
+  margin: 0;
 }
