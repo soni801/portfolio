@@ -1,29 +1,52 @@
-:host
+// Projects container
+#projects
 {
+  // Positioning of children
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  // Spacing around
+  padding: 2rem;
+
+  // Never be more than 2 columns
+  max-width: 900px;
+}
+
+// Each individual project
+.project
+{
+  // Position of children
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
+  justify-content: space-between;
 
-// Apply some padding to all elements to display nicer on smaller screens
-*
-{
-  padding: 1rem;
-}
+  // This lets the image position itself correctly
+  position: relative;
 
-span
-{
-  // Use clamp to properly scale down on smaller screens
-  font-size: clamp(1rem, 100vw, 10rem);
-}
+  // Sizing
+  max-width: 400px;
+  height: 400px;
 
-p
-{
-  max-width: 60ch;
+  overflow: hidden;
 
-  // Center align text on larger screens
-  @media (min-width: 500px)
+  // Project text
+  h2, p
   {
-    text-align: center;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  // Project (background) images
+  img
+  {
+    // Positioning
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    // Use all of parent width
+    width: 100%;
   }
 }
