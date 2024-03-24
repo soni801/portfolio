@@ -1,19 +1,14 @@
+// Import shared styling
+@use '../../shared';
+
 // The project itself
 :host
 {
-  // Position of children
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  // This lets the image position itself correctly
-  position: relative;
-
   // Sizing
   width: 400px;
-  aspect-ratio: 1;
 
-  overflow: hidden;
+  // Colors
+  background: shared.$medium;
 
   // Project text
   h2, p
@@ -22,15 +17,9 @@
     padding: 1rem;
   }
 
-  // Project (background) images
-  img
+  // Remove extra padding under project heading
+  h2
   {
-    // Positioning
-    position: absolute;
-    top: 0;
-    z-index: -1;
-
-    // Use all of parent width
-    width: 100%;
+    padding-bottom: 0;
   }
 }
