@@ -78,7 +78,11 @@
   // Image to the right
   img
   {
-    width: clamp(1rem, 90vw, 30rem);
+    // This is such a stupid way to do sizing, but for some reason aspect-ratio didnt work
+    $size: clamp(1rem, 90vw, 30rem);
+
+    width: $size;
+    height: $size;
   }
 }
 

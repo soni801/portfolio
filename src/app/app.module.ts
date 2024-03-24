@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
 import { ProjectComponent } from './project/project.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { ProjectComponent } from './project/project.component';
     ProjectPageComponent,
     ProjectComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
