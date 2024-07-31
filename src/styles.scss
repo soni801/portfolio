@@ -34,6 +34,7 @@ h2
 p
 {
   max-width: 38ch;
+  break-inside: avoid; // Never split paragraph between multiple columns
 }
 
 ul

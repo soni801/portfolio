@@ -4,3 +4,14 @@
   flex-direction: column;
   align-items: center;
 }
+
+#introduction p
+{
+  margin: 0;
+  max-width: 32ch;
+}
+
+#about-me, #projects
+{
+  column-count: 2;
+}
