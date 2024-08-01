@@ -5,12 +5,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 400px;
+
+  margin: 300px 0;
 }
 
-#introduction p
+#introduction
 {
-  margin: 0;
-  max-width: 32ch;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+
+  img
+  {
+    // Span 2 rows
+    grid-row: 1 / 3;
+
+    border-radius: 30px;
+    box-shadow: variables.$accent 0 0 120px;
+  }
+
+  p
+  {
+    margin: 0;
+    max-width: 32ch;
+  }
+
+  #interests
+  {
+    place-self: end start;
+  }
 }
 
 #about-me, #projects
