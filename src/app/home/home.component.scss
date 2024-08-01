@@ -43,6 +43,20 @@
   column-gap: 40px;
 }
 
+#knowledge
+{
+  // Have less space around this container
+  margin: -200px 0;
+
+  div
+  {
+    display: flex;
+    gap: 25px;
+
+    margin: 25px;
+  }
+}
+
 .project
 {
   padding: 20px;
