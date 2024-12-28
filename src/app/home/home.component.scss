@@ -77,6 +77,8 @@ $knowledge-spacing: 20px;
 
 .project
 {
+  position: relative;
+
   padding: 20px;
   margin-top: 40px;
 
@@ -106,6 +108,13 @@ $knowledge-spacing: 20px;
   a:active
   {
     opacity: .5;
+  }
+
+  // Tech stack tags
+  .tags
+  {
+    position: absolute;
+    bottom: 10px;
   }
 
   img
