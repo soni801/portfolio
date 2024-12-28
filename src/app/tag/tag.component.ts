@@ -12,4 +12,5 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class TagComponent {
   @Input({ required: true }) icon!: string;
+  @Input({ required: true }) reason!: string;
 }

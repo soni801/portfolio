@@ -1,7 +1,59 @@
+@use "../../variables";
 @import "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css";
 
 :host
 {
   display: block;
+  position: relative;
   font-size: 24px;
+  z-index: 1;
+}
+
+// Show tooltip/reason when hovering
+i:hover ~ p
+{
+  opacity: 1;
+}
+
+p
+{
+  // Position
+  position: absolute;
+  top: 2px;
+  left: 100%;
+  margin-left: 10px;
+
+  // Text styling
+  font-size: 1rem;
+  white-space: nowrap;
+  margin-top: 0;
+
+  // Background shape
+  background: variables.$dark;
+  padding: 2px 6px;
+  border-radius: 5px;
+
+  // Disable pointer events
+  pointer-events: none;
+
+  // Invisible by default
+  opacity: 0;
+  transition: .2s;
+
+  &::before
+  {
+    content: "";
+
+    // Position
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    margin-left: -10px;
+
+    // Shape
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent variables.$dark transparent transparent;
+  }
 }
