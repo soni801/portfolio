@@ -1,11 +1,14 @@
 @use "../../variables";
 
+// Specify the spacing between sections on the home page
+$section-spacing: 200px;
+
 :host
 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 200px;
+  gap: $section-spacing;
 
   margin-top: 300px;
 }
@@ -16,7 +19,8 @@
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 30px;
 
-  padding-bottom: 200px;
+  // Double the spacing directly below the introduction
+  padding-bottom: $section-spacing;
 
   img
   {
@@ -102,6 +106,28 @@ $knowledge-spacing: 20px;
     box-shadow: variables.$accent 0 0 150px;
     transform: translate(40px, 40px);
   }
+}
+
+#backdrop-pattern
+{
+  // Configure height
+  $pattern-height: 1000px;
+
+  // Sizing
+  width: 100%;
+  height: $pattern-height;
+
+  // Placement
+  margin-top: -$pattern-height;
+  margin-bottom: -$section-spacing;
+
+  // Create pattern
+  background: variables.$accent;
+  mask-image: url("/assets/pattern.png"), linear-gradient(to top, transparent, black);
+  mask-composite: subtract;
+  mask-position: bottom;
+  mask-size: 30vw;
+  z-index: -1;
 }
 
 // Animation related styling
