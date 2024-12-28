@@ -96,6 +96,18 @@ $knowledge-spacing: 20px;
     margin: 0;
   }
 
+  // Links (project "titles")
+  a
+  {
+    font-weight: bold;
+  }
+
+  // Currently pressed links
+  a:active
+  {
+    opacity: .5;
+  }
+
   img
   {
     margin-bottom: -15px;
