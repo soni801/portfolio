@@ -1,12 +1,9 @@
 import {Component, Input} from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-tag',
   standalone: true,
-    imports: [
-        NgOptimizedImage
-    ],
+  imports: [],
   templateUrl: './tag.component.html',
   styleUrl: './tag.component.scss'
 })
