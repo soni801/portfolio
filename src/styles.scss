@@ -52,3 +52,15 @@ a
 {
   color: variables.$foreground;
 }
+
+// Project links ("titles")
+app-project-card a
+{
+  font-weight: bold;
+
+  // Currently pressed links
+  &:active
+  {
+    opacity: .5;
+  }
+}

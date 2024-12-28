@@ -2,7 +2,7 @@ import {AfterViewInit, Component} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {LanguageDisplayComponent} from "../language-display/language-display.component";
 import {FooterComponent} from "../footer/footer.component";
-import {TagComponent} from "../tag/tag.component";
+import {ProjectCardComponent} from "../project-card/project-card.component";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import {TagComponent} from "../tag/tag.component";
     NgOptimizedImage,
     LanguageDisplayComponent,
     FooterComponent,
-    TagComponent
+    ProjectCardComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

@@ -1,0 +1,44 @@
+@use "../../variables";
+
+:host
+{
+  display: block;
+  position: relative;
+
+  padding: 20px;
+  margin-top: 40px;
+
+  background: variables.$background;
+
+  border-radius: 30px;
+  overflow: hidden;
+
+  // Let the first project have less top margin (first project is child number 2, after heading)
+  &:nth-child(2)
+  {
+    margin-top: 10px;
+  }
+}
+
+p
+{
+  margin: 0;
+}
+
+// Tech stack tags
+.tags
+{
+  position: absolute;
+  bottom: 10px;
+}
+
+img
+{
+  margin-bottom: -15px;
+
+  border: 5px solid variables.$muted-accent;
+  border-radius: 30px;
+
+  box-shadow: variables.$accent 0 0 150px;
+  transform: translate(40px, 40px);
+}
