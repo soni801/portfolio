@@ -16,8 +16,7 @@ $section-spacing: 200px;
 #introduction
 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 
   // Double the spacing directly below the introduction
   padding-bottom: $section-spacing;
@@ -41,12 +40,6 @@ $section-spacing: 200px;
   {
     place-self: end start;
   }
-}
-
-#about-me, #projects
-{
-  column-count: 2;
-  column-gap: 40px;
 }
 
 // Knowledge 'cards' spacing
@@ -149,6 +142,22 @@ $knowledge-spacing: 20px;
   mask-position: bottom;
   mask-size: 30vw;
   z-index: -1;
+}
+
+// Desktop-only styling
+@media (min-width: 900px)
+{
+  #introduction
+  {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+  }
+
+  #about-me, #projects
+  {
+    column-count: 2;
+    column-gap: 40px;
+  }
 }
 
 // Animation related styling
