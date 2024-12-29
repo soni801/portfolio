@@ -2,10 +2,15 @@
 
 :host
 {
+  // Specify the padding in a variable
+  $padding: 20px;
+
   display: block;
   position: relative;
 
-  padding: 20px;
+  max-width: calc(100vw - 4 * $padding);
+
+  padding: $padding;
   margin-top: 40px;
 
   background: variables.$background;

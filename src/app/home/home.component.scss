@@ -1,7 +1,7 @@
 @use "../../variables";
 
 // Specify the spacing between sections on the home page
-$section-spacing: 200px;
+$section-spacing: 150px;
 
 :host
 {
@@ -40,6 +40,11 @@ $section-spacing: 200px;
   {
     place-self: end start;
   }
+}
+
+#about-me
+{
+  padding: 0 20px;
 }
 
 // Knowledge 'cards' spacing
