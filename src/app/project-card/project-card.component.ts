@@ -4,7 +4,7 @@ import {TagComponent} from "../tag/tag.component";
 
 type techEntry = {
   icon: string;
-  reason: string;
+  tooltip: string;
 }
 
 @Component({

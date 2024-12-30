@@ -1,7 +1,7 @@
 <p><ng-content></ng-content></p>
 <div class="tags">
   @for (entry of techStack; track entry) {
-    <app-tag [icon]="entry.icon" [reason]="entry.reason"></app-tag>
+    <app-tag [icon]="entry.icon" [tooltip]="entry.tooltip"></app-tag>
   }
 </div>
 <img [ngSrc]="image" alt="Project image" width="375" height="250">
