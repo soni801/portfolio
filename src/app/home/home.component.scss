@@ -1,16 +1,26 @@
 @use "../../variables";
 
 // Specify the spacing between sections on the home page
-$section-spacing: 150px;
+$section-spacing-mobile: 100px;
+$section-spacing-desktop: 150px;
 
 :host
 {
+  // Use a normal css variable for section spacing to more easily change it on larger screens
+  --section-spacing: #{$section-spacing-mobile};
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $section-spacing;
+  gap: var(--section-spacing);
 
-  margin-top: 300px;
+  margin-top: calc(2 * var(--section-spacing));
+}
+
+// Offset section headings to align properly with content on second column
+h1:first-child
+{
+  margin-top: -16px;
 }
 
 #introduction
@@ -19,7 +29,7 @@ $section-spacing: 150px;
   grid-row-gap: 30px;
 
   // Double the spacing directly below the introduction
-  padding-bottom: $section-spacing;
+  padding-bottom: var(--section-spacing);
 
   img
   {
@@ -84,7 +94,7 @@ $knowledge-spacing: 20px;
 
   // Placement
   margin-top: -$pattern-height;
-  margin-bottom: -$section-spacing;
+  margin-bottom: calc(-1 * var(--section-spacing));
 
   // Create pattern
   background: variables.$accent;
@@ -98,6 +108,12 @@ $knowledge-spacing: 20px;
 // Desktop-only styling
 @media (min-width: 900px)
 {
+  // Increase section spacing on larger screens
+  :host
+  {
+    --section-spacing: #{$section-spacing-desktop};
+  }
+
   #introduction
   {
     grid-template-columns: 1fr 1fr;
