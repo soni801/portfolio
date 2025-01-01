@@ -55,13 +55,13 @@ h1:first-child
 #about-me
 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 30px;
   grid-column-gap: 30px;
 
   // Don't go all the way to screen edges on mobile
   padding: 0 20px;
 
-  // Each individual summary info tack
+  // Each individual info tack (used in summary and current work)
   .info-tack
   {
     display: flex;
@@ -79,10 +79,16 @@ h1:first-child
     }
   }
 
-  // Add some spacing around current work
+  // Avoid too much empty space right below section heading
+  #summary
+  {
+    margin-top: -20px;
+  }
+
+  // Add some spacing right below "current work"-heading
   #current-work h2
   {
-    margin: 2rem 0 .5rem;
+    margin-bottom: .5em;
   }
 
   #detailed-text
@@ -90,10 +96,8 @@ h1:first-child
     // Padding and rounding size
     $padding: 2ch;
 
-    // Place in right column
+    // Needed for absolute positioning inside
     position: relative;
-    grid-row: 1 / 4;
-    grid-column: 2 / 3;
 
     // Match height to left column
     // This is using a really cool trick from here: https://stackoverflow.com/a/68236289
@@ -112,7 +116,7 @@ h1:first-child
     &::after
     {
       // Placement
-      content: 'Trykk for å forstørre';
+      content: 'Les mer...';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -174,6 +178,10 @@ h1:first-child
   app-about-me
   {
     // Sizing
+    max-height: 65vh;
+    overflow: scroll;
+
+    // Spacing
     padding: 30px;
     border-radius: 30px;
 
@@ -181,10 +189,6 @@ h1:first-child
     color: variables.$foreground;
     background: variables.$background;
     box-shadow: rgba(variables.$accent, .5) 0 0 100px;
-
-    // Text
-    column-count: 2;
-    column-gap: 40px;
   }
 
   button
@@ -270,6 +274,25 @@ $knowledge-spacing: 20px;
   {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 30px;
+  }
+
+  #about-me
+  {
+    grid-template-columns: 1fr 1fr;
+
+    #detailed-text
+    {
+      grid-row: 1 / 4;
+      grid-column: 2 / 3;
+    }
+  }
+
+  // Styling for about me dialog (fullscreen)
+  #about-me-fullscreen[open] app-about-me
+  {
+    // Multiple columns
+    column-count: 2;
+    column-gap: 40px;
   }
 
   #projects

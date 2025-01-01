@@ -3,3 +3,9 @@ p:first-child
 {
   margin-top: 0;
 }
+
+// Remove bottom margin from the last paragraph
+p:last-child
+{
+  margin-bottom: 0;
+}
