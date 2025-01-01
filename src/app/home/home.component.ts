@@ -3,6 +3,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {LanguageDisplayComponent} from "../language-display/language-display.component";
 import {FooterComponent} from "../footer/footer.component";
 import {ProjectCardComponent} from "../project-card/project-card.component";
+import {AboutMeComponent} from "../about-me/about-me.component";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import {ProjectCardComponent} from "../project-card/project-card.component";
     NgOptimizedImage,
     LanguageDisplayComponent,
     FooterComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    AboutMeComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -26,30 +28,16 @@ export class HomeComponent implements AfterViewInit {
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) this.addAnimation(knowledgeLines);
   }
 
-  toggleAboutMe(event: Event): void {
-    // Make sure the event target is valid
-    if (!(event.target instanceof HTMLElement)) return;
+  toggleAboutMe(): void {
+    // Get the dialog element
+    // TODO: There must be a better way of selecting this
+    const dialog = document.querySelector('#about-me-fullscreen');
+    if (!(dialog instanceof HTMLDialogElement)) return;
 
-    if (this.showDetailedAboutMe) {
-      // Remove popup text node
-      const fullscreenElement = document.querySelector('#about-me-fullscreen');
-      if (fullscreenElement) fullscreenElement.remove();
-
-      // Hide close button
-      const closeButton = document.querySelector('#about-me button');
-      if (closeButton) closeButton.classList.remove('visible');
-      this.showDetailedAboutMe = false;
-    } else {
-      // Create popup text node
-      const clone = event.target.cloneNode(true) as HTMLElement;
-      clone.id = 'about-me-fullscreen';
-      document.body.append(clone);
-
-      // Show close button
-      const closeButton = document.querySelector('#about-me button');
-      if (closeButton) closeButton.className = 'visible';
-      this.showDetailedAboutMe = true;
-    }
+    // Toggle it
+    if (this.showDetailedAboutMe) dialog.close();
+    else dialog.show();
+    this.showDetailedAboutMe = !this.showDetailedAboutMe;
   }
 
   private addAnimation(elements: NodeListOf<Element>): void {

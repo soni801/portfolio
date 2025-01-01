@@ -1,0 +1,5 @@
+// Remove top margin from the first paragraph
+p:first-child
+{
+  margin-top: 0;
+}
