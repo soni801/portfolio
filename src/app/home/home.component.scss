@@ -54,7 +54,98 @@ h1:first-child
 
 #about-me
 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+
+  // Don't go all the way to screen edges on mobile
   padding: 0 20px;
+
+  // Each individual summary info tack
+  .info-tack
+  {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    // Reset text margin while also applying custom margin
+    * { margin: .2em 0; }
+
+    // Add some margin to devicon icons
+    i
+    {
+      margin: 0 2px;
+      font-size: 20px;
+    }
+  }
+
+  // Add some spacing around current work
+  #current-work h2
+  {
+    margin: 2rem 0 .5rem;
+  }
+
+  #detailed-text
+  {
+    // Padding and rounding size
+    $padding: 2ch;
+
+    // Place in right column
+    position: relative;
+    grid-row: 1 / 4;
+    grid-column: 2 / 3;
+
+    // Match height to left column
+    // This is using a really cool trick from here: https://stackoverflow.com/a/68236289
+    height: 0;
+    min-height: calc(100% - 2 * $padding);
+
+    // Styling
+    padding: $padding;
+    background: variables.$background;
+    box-shadow: rgba(variables.$accent, .2) 0 0 50px;
+    border-radius: $padding;
+    overflow: hidden;
+    user-select: none;
+
+    // Remove top margin from first child
+    :first-child { margin-top: 0; }
+
+    // Fade on bottom
+    &::after
+    {
+      // Placement
+      content: 'Trykk for å forstørre';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      // Fadeout on bottom of container
+      padding: 4em 0 .5em;
+      background: linear-gradient(to bottom, transparent, variables.$background 75%);
+
+      // Text styling
+      color: variables.$muted-accent;
+      text-shadow: variables.$accent 0 0 15px;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-align: center;
+
+      transition: .5s ease;
+    }
+
+    &:hover
+    {
+      cursor: pointer;
+
+      &::after
+      {
+        padding-top: 8em;
+        font-size: 1.3em;
+      }
+    }
+  }
 }
 
 // Knowledge 'cards' spacing
@@ -120,7 +211,7 @@ $knowledge-spacing: 20px;
     grid-column-gap: 30px;
   }
 
-  #about-me, #projects
+  #projects
   {
     column-count: 2;
     column-gap: 40px;
