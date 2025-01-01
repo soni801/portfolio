@@ -77,6 +77,14 @@ h1:first-child
       margin: 0 2px;
       font-size: 20px;
     }
+
+    // Properly align link icons
+    a > span
+    {
+      margin: 0 0 0 4px;
+      font-size: 16px;
+      transform: translateY(2px);
+    }
   }
 
   // Avoid too much empty space right below section heading
