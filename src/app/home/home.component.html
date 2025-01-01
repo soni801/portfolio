@@ -58,7 +58,7 @@
   </div>
 
   <!-- Detailed text -->
-  <div id="detailed-text">
+  <div id="detailed-text" (click)="this.toggleAboutMe($event)">
     <p>Mitt navn er Samuel. Jeg kommer fra Bergen, og bruker store deler av tiden min på webutvikling. Jeg gjennomførte
       utdanningsløpet informasjonsteknologi og medieproduksjon på Amalie Skram VGS i 2020-2022. De to påløpende årene
       jobbet jeg som læring i IT-driftsfaget ved Høgskulen på Vestlandet. Her gikk arbeidet mye i drift av IT-utstyr.</p>
@@ -74,6 +74,9 @@
       tidligere prosjekter. Dersom noe av det jeg har gjort tidligere virker interessant, kan du kontakte meg via e-post
       for å høre hva jeg kan tilby.</p>
   </div>
+
+  <!-- Button to close fullscreen text -->
+  <button (click)="this.toggleAboutMe($event)">Lukk fullskjerm</button>
 </div>
 
 <!-- Knowledge -->

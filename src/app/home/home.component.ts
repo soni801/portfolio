@@ -17,11 +17,39 @@ import {ProjectCardComponent} from "../project-card/project-card.component";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements AfterViewInit {
+  showDetailedAboutMe = false;
+
   ngAfterViewInit(): void {
     // TODO: There must be a better way of selecting this
     const knowledgeLines = document.querySelectorAll('#knowledge div');
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) this.addAnimation(knowledgeLines);
+  }
+
+  toggleAboutMe(event: Event): void {
+    // Make sure the event target is valid
+    if (!(event.target instanceof HTMLElement)) return;
+
+    if (this.showDetailedAboutMe) {
+      // Remove popup text node
+      const fullscreenElement = document.querySelector('#about-me-fullscreen');
+      if (fullscreenElement) fullscreenElement.remove();
+
+      // Hide close button
+      const closeButton = document.querySelector('#about-me button');
+      if (closeButton) closeButton.classList.remove('visible');
+      this.showDetailedAboutMe = false;
+    } else {
+      // Create popup text node
+      const clone = event.target.cloneNode(true) as HTMLElement;
+      clone.id = 'about-me-fullscreen';
+      document.body.append(clone);
+
+      // Show close button
+      const closeButton = document.querySelector('#about-me button');
+      if (closeButton) closeButton.className = 'visible';
+      this.showDetailedAboutMe = true;
+    }
   }
 
   private addAnimation(elements: NodeListOf<Element>): void {

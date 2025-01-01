@@ -111,6 +111,9 @@ h1:first-child
     // Remove top margin from first child
     :first-child { margin-top: 0; }
 
+    // Make inner content pass-through (this will help get the correct target when clicking)
+    * { pointer-events: none; }
+
     // Fade on bottom
     &::after
     {
@@ -146,6 +149,9 @@ h1:first-child
       }
     }
   }
+
+  // Hide fullscreen close button by default
+  button { display: none; }
 }
 
 // Knowledge 'cards' spacing
@@ -194,6 +200,64 @@ $knowledge-spacing: 20px;
   mask-position: bottom;
   mask-size: 30vw;
   z-index: -1;
+}
+
+// Styling for fullscreen about me text
+#about-me-fullscreen
+{
+  // Position
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  // Sizing
+  width: max-content;
+  padding: 30px;
+  border-radius: 30px;
+
+  // Background
+  background: variables.$background;
+  box-shadow: variables.$accent 0 0 100px,
+              rgba(variables.$dark, .8) 0 0 0 50vw;
+
+  // Columns
+  column-count: 2;
+  column-gap: 40px;
+
+  // Remove top margin from first child
+  :first-child { margin-top: 0; }
+}
+
+// Show button when fullscreen text is visible
+button.visible
+{
+  // This is most likely the best way of displaying this as for now
+  display: unset !important;
+
+  // Position
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+
+  // Size
+  width: 100vw;
+  max-width: 50ch;
+
+  // Styling
+  color: variables.$foreground;
+  background: variables.$muted-accent;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+
+  // Text style
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  text-transform: uppercase;
 }
 
 // Desktop-only styling
