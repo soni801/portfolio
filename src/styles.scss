@@ -13,6 +13,9 @@ html
   background: variables.$dark;
   color: variables.$foreground;
 
+  // Hint at dark scheme for scrollbars and such
+  color-scheme: dark;
+
   font-family: 'Poppins', sans-serif;
 }
 
