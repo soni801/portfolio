@@ -1,0 +1,30 @@
+:host
+{
+  display: flex;
+  align-items: center;
+
+  // Reset text margin while also applying custom margin
+  *
+  {
+    margin: .2em 0;
+  }
+
+  // Add some margin to devicon icons
+  i
+  {
+    margin: 0 2px;
+    font-size: 20px;
+  }
+
+  a
+  {
+    margin-left: 1em;
+  }
+
+  // Properly align external link icons
+  .external
+  {
+    margin-left: 4px;
+    font-size: 16px;
+  }
+}

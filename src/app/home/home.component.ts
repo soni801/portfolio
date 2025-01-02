@@ -4,6 +4,7 @@ import {LanguageDisplayComponent} from "../language-display/language-display.com
 import {FooterComponent} from "../footer/footer.component";
 import {ProjectCardComponent} from "../project-card/project-card.component";
 import {AboutMeComponent} from "../about-me/about-me.component";
+import {TextTackComponent} from "../text-tack/text-tack.component";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import {AboutMeComponent} from "../about-me/about-me.component";
     LanguageDisplayComponent,
     FooterComponent,
     ProjectCardComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    TextTackComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

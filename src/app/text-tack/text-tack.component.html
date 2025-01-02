@@ -1,0 +1,11 @@
+@if (devicon) {
+  <i [class]="icon"></i>
+} @else {
+  <span class="material-symbols-outlined">{{ icon }}</span>
+}
+@if (external) {
+  <a [href]="href" target="_blank">{{ text }}</a>
+  <span class="material-symbols-outlined external">open_in_new</span>
+} @else {
+  <a>{{ text }}</a>
+}

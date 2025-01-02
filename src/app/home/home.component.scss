@@ -65,32 +65,6 @@ h1:first-child
   // Don't go all the way to screen edges on mobile
   padding: 0 20px;
 
-  // Each individual info tack (used in summary and current work)
-  .info-tack
-  {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-
-    // Reset text margin while also applying custom margin
-    * { margin: .2em 0; }
-
-    // Add some margin to devicon icons
-    i
-    {
-      margin: 0 2px;
-      font-size: 20px;
-    }
-
-    // Properly align link icons
-    a > span
-    {
-      margin: 0 0 0 4px;
-      font-size: 16px;
-      transform: translateY(2px);
-    }
-  }
-
   // Avoid too much empty space right below section heading
   #summary
   {
