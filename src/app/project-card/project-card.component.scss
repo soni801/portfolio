@@ -28,7 +28,47 @@
 
 p
 {
+  // Appear above shadow from image
+  position: relative;
+  z-index: 1;
+
   margin: 0;
+}
+
+.links
+{
+  // Placement
+  text-align: right;
+  transform: translateY(1.5em);
+
+  // Link icon
+  .material-symbols-outlined
+  {
+    margin-right: .5ch;
+    font-size: 19px;
+    transform: translateY(4px);
+  }
+
+  // Links themselves
+  a
+  {
+    // Text styling
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: .1s ease;
+
+    &:hover
+    {
+      font-weight: bold;
+    }
+  }
+
+  // Space between links
+  a ~ span
+  {
+    margin: 0 1ch;
+  }
 }
 
 // Tech stack tags

@@ -18,6 +18,10 @@ type techEntry = {
   styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
+  @Input({ required: true }) github!: string;
+  @Input() link: string | undefined;
+  @Input() linkText: string = 'Nettside';
+
   @Input() techStack: techEntry[] = [];
   @Input() image: string = 'https://placehold.co/375x250';
 }

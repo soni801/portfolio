@@ -1,7 +1,24 @@
-<p><ng-content></ng-content></p>
+<!-- Content -->
+<p>
+  <ng-content></ng-content>
+</p>
+
+<!-- Links -->
+<div class="links">
+  <span class="material-symbols-outlined">link</span>
+  <a [href]="github" target="_blank">GitHub</a>
+  @if (link) {
+    <span>&bull;</span>
+    <a [href]="link" target="_blank">{{ linkText }}</a>
+  }
+</div>
+
+<!-- Tech stack icons -->
 <div class="tags">
   @for (entry of techStack; track entry) {
     <app-tag [icon]="entry.icon" [tooltip]="entry.tooltip"></app-tag>
   }
 </div>
+
+<!-- Image -->
 <img [ngSrc]="image" alt="Project image" width="375" height="250">
