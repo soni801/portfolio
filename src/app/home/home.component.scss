@@ -124,6 +124,8 @@ h1:first-child
     overflow: hidden;
     user-select: none;
 
+    transition: .5s ease;
+
     // Fade on bottom
     &::after
     {
@@ -151,6 +153,7 @@ h1:first-child
     &:hover
     {
       cursor: pointer;
+      box-shadow: rgba(variables.$accent, .6) 0 0 70px;
 
       &::after
       {
