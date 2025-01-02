@@ -13,8 +13,6 @@ $section-spacing-desktop: 150px;
   flex-direction: column;
   align-items: center;
   gap: var(--section-spacing);
-
-  margin-top: calc(2 * var(--section-spacing));
 }
 
 // Offset section headings to align properly with content on second column
@@ -23,18 +21,24 @@ h1:first-child
   margin-top: -16px;
 }
 
+// The view that's initially seen immediately after page load
+#landing-view
+{
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
 #introduction
 {
   display: grid;
   grid-row-gap: 30px;
 
-  // Double the spacing directly below the introduction
-  padding-bottom: var(--section-spacing);
-
   img
   {
     // Span 2 rows
     grid-row: 1 / 3;
+    place-self: center;
 
     border-radius: 30px;
     box-shadow: variables.$accent 0 0 120px;
@@ -43,7 +47,7 @@ h1:first-child
   p
   {
     margin: 0;
-    max-width: 32ch;
+    max-width: 31ch;
   }
 
   #interests
