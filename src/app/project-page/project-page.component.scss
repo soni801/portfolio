@@ -1,0 +1,68 @@
+@use "../../variables";
+
+:host
+{
+  display: block;
+}
+
+a
+{
+  // Side decoration
+  $decoration-size: 15vw;
+
+  // Horizontally center
+  position: relative;
+  display: block;
+  width: min-content;
+  margin: 0 auto -3rem;
+  transition: .4s ease;
+
+  &:hover
+  {
+    scale: 1.3;
+    opacity: .6;
+  }
+
+  &:active
+  {
+    opacity: .2 !important;
+    transition: .2s ease;
+  }
+
+  span
+  {
+    padding: 20px;
+    font-size: 3rem;
+  }
+
+  // Decoration
+  &::before, &::after
+  {
+    // Sizing
+    content: '';
+    display: block;
+    width: $decoration-size;
+
+    // Positioning
+    position: absolute;
+    top: 50%;
+    left: calc($decoration-size * -1);
+
+    /* Strek */
+    border-top: 1px solid currentColor;
+  }
+
+  // Fix right side position
+  &::after
+  {
+    left: unset;
+    right: calc($decoration-size * -1);
+  }
+}
+
+#shadow
+{
+  margin: 0 auto;
+  width: 25vw;
+  box-shadow: 0 0 9rem 60px variables.$accent;
+}
