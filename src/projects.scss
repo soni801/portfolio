@@ -1,0 +1,30 @@
+@use "variables";
+
+h1
+{
+  text-align: center;
+}
+
+p
+{
+  max-width: unset;
+}
+
+img
+{
+  display: flex;
+  margin: 0 auto 1rem;
+
+  &.right
+  {
+    float: right;
+    padding-left: 2rem;
+  }
+}
+
+hr
+{
+  width: 50%;
+  margin: 2rem auto;
+  color: variables.$background;
+}
