@@ -1,0 +1,98 @@
+<h1>Recal Social</h1>
+
+<div>
+  <img class="right" ngSrc="/assets/projects/recal-social.png" alt="Recal Social" height="250" width="375">
+
+  <p>Recal Social er en web-basert chattetjeneste, designet og utviklet fra bunnen
+    for å være en bærekraftig måte å kommunisere på over internett.
+    Det startet som et skoleprosjekt, men har senere utviklet seg til å bli et større prosjekt.</p>
+
+  <p>Skoleoppgaven som startet prosjektet Recal Social handlet om å utvikle et produkt som hjalp brukere å leve mer bærekraftig.
+    På overflaten virker det kanskje ikke helt som Recal Social treffer denne oppgaven, og det er egentlig helt riktig.
+    Gruppen vår endte opp med å "tviste" oppgaveteksten ganske heftig for å få Recal Social til å passe inn –
+    vi ønsket egentlig bare en unnskyldning til å få jobbe på et veldig gøy prosjekt.</p>
+
+  <p>Vi endte opp med følgende bærekraftskrav:</p>
+
+  <ul>
+    <li>En chattetjeneste gjør at man unngår brev, som ikke er miljøvennlig</li>
+    <li>Tjenesten er i Norge, hvor mesteparten av strømmen er hydro. Dette er mer bærekraftig enn kull</li>
+    <li>Ved å bruke Recal Social holder all data seg i Norge, som gir økt sikkerhet og mindre datatrafikk over lange distanser</li>
+    <li>Recal Social er spesifikt laget for å bruke lite energi og lav båndbredde</li>
+  </ul>
+
+  <p>Dersom man kan noe om IT, skjønner man ganske fort at disse grunnene er ganske langstrukne, for å si det mildt!
+    Allikevel likte læreren vår hvor mye innsats vi la ned i prosjektet, og valgte å la oss holde på.
+    Vi viste iallefall mye programmeringskompetanse!</p>
+
+  <hr>
+
+  <p>Den overordnede planen vi etterhvert landet på, var som følger:</p>
+
+  <ol>
+    <li>Lage en datamodell</li>
+    <li>Lage en API for å håndtere all kommunikasjon med databasen</li>
+    <li>Lage en WebSocket for å håndtere sanntidskommunikasjon</li>
+    <li>Lage en nettside som kan fungere utifra funksjonaliteten i API og websocket.</li>
+  </ol>
+
+  <p>Vi fordelte oppgaver på tvers av gruppen på en litt uorganisert måte:</p>
+  <img ngSrc="/assets/project/recal-social/project-plan.png" alt="Prosjektplan" height="315" width="560">
+
+  <p>Dataflyten i løsningen ble planlagt slik:</p>
+  <img ngSrc="/assets/project/recal-social/dataflow.svg" alt="Dataflyt" height="141" width="421">
+
+  <p>Vi utformet også pseudokode i både API-en og klienten:</p>
+  <img ngSrc="/assets/project/recal-social/pseudokode-api.svg" alt="Pseudokode" height="310" width="500">
+  <img ngSrc="/assets/project/recal-social/pseudocode-client.svg" alt="Pseudokode" height="1000" width="500">
+
+  <p>Før vi begynte å utvikle klienten, lagde vi et par skisser i varierende kvalitet:</p>
+  <img ngSrc="/assets/project/recal-social/planning-1.png" alt="Skisse 1" height="324" width="576">
+  <img ngSrc="/assets/project/recal-social/planning-2.png" alt="Skisse 2" height="324" width="576">
+
+  <p>Etter prosjektets slutt, utarbeidet vi også en liste over mulige trusler og sikkerhetshull i løsninen.</p>
+
+  <p>Mulige trusler i web-klienten:</p>
+
+  <ul>
+    <li>Klienten sender mange unødvendige forespørsler, som gir en angriper flere punkter som kan manipuleres</li>
+    <li>Klienten renser ingen data</li>
+    <li>Klienten lagrer brukernavn, email og tokener i åpen tekst i nettleseren,
+      uten noe utløpsdato, automatisk sletting, kryptering eller beskyttelse.</li>
+  </ul>
+
+  <p>Dette gjør det ekstremt lett å få tak i. Særlige personopplysninger blir ikke beskyttet på noen måte.</p>
+
+  <p>Mulige trusler i API-en:</p>
+
+  <ul>
+    <li>APIen sender tokener gjennom HTTP-data, ikke som cookies. Dette gjør det lettere for en angriper å få tak i informasjonen.</li>
+    <li>Om en angriper får tilgang til refresh token, er det ingen måte å stoppe de før de logger ut eller blir logget ut</li>
+    <li>Forskjellige funksjoner i APIen bruker egne måter å sjekke at brukeren eksisterer i databasen,
+      som gjør det lettere for feil i koden å snike seg forbi</li>
+    <li>CORS tillater alle hvor som helst å hente inn og bruke APPen. Folk kan misbruke den og lage en falsk side koblet til samme API.</li>
+    <li>All funksjonalitet er tilgjengelig uansett sender. Det betyr at funksjoner bare WebSocket skal ha tilgang til, er tilgjengelig for alle</li>
+    <li>Hashing på passord skjer ikke på grupperom, dersom man da ikke kan se passordet sitt igjen.</li>
+  </ul>
+
+  <p>Mulige trusler i WebSocket-en:</p>
+
+  <ul>
+    <li>WebSocket-en renser ingen data den får, og kan dermed bidra til å kommunisere uriktig data.</li>
+    <li>Autorisasjonssystemet brukt i WebSocket-en er relativt primitivt, og kan gi mange falske positiver</li>
+    <li>Det er relativt enkelt å produsere falske forespørsler. Dette gjør RCE meget tilgjengelig for angripere.</li>
+  </ul>
+
+  <hr>
+
+  <p>En stund etter dette skoleprosjektet var ferdig, endte vi opp med å videreutvikle det på eget initiativ.
+    Dette var i all hovedsak fordi vi kunne se et reelt behov i en slik løsning,
+    men også fordi det var et kult konsept og fordi vi allerede hadde lagt mye arbeid ned i det.</p>
+
+  <p>I all hovedsak var det jeg som sto for denne videreutviklingen.
+    Det første på agendaen var å tette alle sikkerhetshullene vi hadde funnet,
+    før jeg fort fortsatte på diverse forbedringer i brukergrensesnittet for å skape en bedre brukeropplevelse.</p>
+
+  <p>Prosjektet får fortsatt oppdateringer til tider. Du kan selv se statusen på denne utviklingen i det tilhørende
+    <a href="https://github.com/orgs/recalstudios/projects/1" target="_blank">GitHub-prosjektet</a></p>
+</div>
