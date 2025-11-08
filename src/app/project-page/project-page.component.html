@@ -1,4 +1,16 @@
 <a routerLink="/"><span class="material-symbols-outlined">home</span></a>
 <div id="shadow"></div>
 
-<p>Selected project: {{ project }}</p>
+<div id="content">
+  @switch (project) {
+    @case ('kaffe-diem-app') {
+      <app-kaffe-diem-app></app-kaffe-diem-app>
+    }
+    @case ('recal-social') {
+      <app-recal-social></app-recal-social>
+    }
+    @default {
+      <p>Invalid project</p>
+    }
+  }
+</div>
