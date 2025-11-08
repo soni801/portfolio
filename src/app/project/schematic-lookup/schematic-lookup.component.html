@@ -1,0 +1,46 @@
+<h1>Brannpunkt-nettside</h1>
+
+<div>
+  <img class="right" ngSrc="/assets/projects/schematic-lookup.png" alt="Brannpunkt-nettside" height="250" width="375">
+
+  <p>I 1. klasse på videregående skole var jeg i praksis hos Steffensen Multimedia AS (Nå System Norge AS).
+    De leverte ulike driftsoppgaver til Forum Scene i Bergen. Dette inkluderte blant annet brannansvar når det var
+    forestillinger i lokalet.</p>
+
+  <p>De støtte derimot på et problem når de fikk forvarsel på brann og måtte finne det relevante punktet.
+    Når det kom forvarsel hadde man ikke mye tid på seg før alarmen gikk. I dette korte tidsrommet måtte man
+    manuelt gå gjennom brannskisser for å finne det relevante brannpunktet. Denne prosessen tok lang tid,
+    i og med at det var mange skisser. De søkte derfor etter en løsning som ville effektivisere dette.</p>
+
+  <p>Jeg utviklet derfor en nettside som viste alle brannpunktene i rekkefølge. Der kunne man få en rask oversikt,
+    samt søke etter et spesifikt punkt og få opp den relevante skissen med det spesifikke punktet uthevet.
+    Tanken med denne nettsiden var at tiden brukt på å lokalisere punktet skulle drastisk reduseres.</p>
+
+  <p>Jeg lagde en prototype relativt raskt, og gikk videre på andre prosjekter uten å jobbe videre på dette.
+    I nåværende tilstand funker det fint, men det er tydelig satt sammen på en lite optimalisert måte
+    og det er tydelig at jeg hadde mindre kunnskap om god kodestruktur når jeg lagde det.</p>
+
+  <p>Nåværende løsning har følgende problemer:</p>
+  <ul>
+    <li>Hvert enkelt punkt vises med et eget JPG-bilde, hvilket gjør at nettsiden laster veldig tregt.</li>
+    <li>Nettsiden ble kun designet utifra bruk på mobiltelefon, og er derfor upraktisk å bruke på større skjermer.</li>
+  </ul>
+
+  <hr>
+
+  <p>Dersom jeg skulle designet denne løsningen på nytt nå, kunne jeg laget en betydelig bedre plattform
+    som også inneholdt et admin-dashbord der man kunne redigere punkter. Jeg hadde optimalisert måten bilder
+    ble lastet på, og lastet inn selve markeringen av punktet dynamisk
+    slik at det ikke trengte å være en del av bildefilen.</p>
+
+  <p>Med denne tilvenningen kunne hele løsningen vært et SaaS-produkt man kunne solgt til flere kunder,
+    med en sentralisert administreringsplattform. Kunder kunne også eventuelt brukt samme innlogging på plattformen
+    for å få tilgang til flere bedrifter.</p>
+
+  <p>Jeg presenterte i ettertid denne muligheten for bedriften jeg hadde praksis i, men det var ikke realistisk
+    å prioritere prosjektet. Et slikt prosjekt har derfor aldri blitt gjennomført.
+    Jeg har selv vurdert å utvikle løsningen på eget initiativ basert på skissene jeg den gang lagde for løsningen:</p>
+
+  <img ngSrc="/assets/project/schematic-lookup/dataflow.svg" alt="Data flow chart" height="400" width="800">
+  <img ngSrc="/assets/project/schematic-lookup/design.svg" alt="Design" height="500" width="800">
+</div>

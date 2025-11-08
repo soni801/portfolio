@@ -2,13 +2,15 @@ import {Component, inject} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import {KaffeDiemAppComponent} from "../project/kaffe-diem-app/kaffe-diem-app.component";
 import {RecalSocialComponent} from "../project/recal-social/recal-social.component";
+import {SchematicLookupComponent} from "../project/schematic-lookup/schematic-lookup.component";
 
 @Component({
   selector: 'app-project-page',
   imports: [
     RouterLink,
     KaffeDiemAppComponent,
-    RecalSocialComponent
+    RecalSocialComponent,
+    SchematicLookupComponent
   ],
   templateUrl: './project-page.component.html',
   styleUrl: './project-page.component.scss'
