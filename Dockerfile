@@ -1,4 +1,4 @@
-FROM node:latest as build
+FROM node:latest AS build
 LABEL authors="Soni"
 WORKDIR /data
 COPY ./ /data/
