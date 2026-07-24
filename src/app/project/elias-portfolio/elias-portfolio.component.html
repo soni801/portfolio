@@ -1,0 +1,54 @@
+<h1>Digital portefølje for Elias</h1>
+
+<div>
+  <p>På starten av året 2024 kontaktet min gode venn Elias meg og spurte om jeg kunne hjelpe ham å programmere en nettside.
+    Elias jobber som frilanser innenfor fotografi, og ønsket en nettside som viste frem hans prosjekter i form av en
+    digital portefølje, slik at potensielle kunder kunne se hans arbeid og se kontaktinfo på en enkel og tilgjengelig måte.</p>
+
+  <img ngSrc="/assets/project/elias-portfolio/cover.png" alt="Digital portefølje for Elias" height="285" width="804">
+
+  <p>Elias er selv flink på både design og programmering, så han hadde allerede en veldig klar take om hvordan nettsiden
+    skulle se ut. Dessverre hadde han ikke tid til å utvikle den selv, så vi inngikk en avtale der han sendte meg designet
+    og jeg skrev selve koden.</p>
+
+  <p>Min oppgave ble altså å utvikle en nettside i perfekt samsvar med
+    <a href="https://xd.adobe.com/view/a24c6743-5d63-472f-941e-581c5688c533-f71f/" target="_blank">designet han hadde laget i Adobe XD</a>.</p>
+
+  <hr>
+
+  <p>I og med at Elias også selv kan programmere, ønsket han at koden skulle være enkel å forstå og videreutvikle,
+    slik at han kunne ta over prosjektet og legge til fremtidig innhold på nettsiden etter at jeg hadde laget basen.
+    Valget av tech-stack ble derfor veldig lett: ren HTML, CSS og JavaScript, uten tredjepartsrammeverk.
+    Det eneste biblioteket som ble brukt var jQuery.</p>
+
+  <p>Jeg fikk raskt skrevet en prototype, og etter litt frem og tilbake på hvilket domene vi skulle kjøpe,
+    fikk vi publisert en tidlig versjon av nettsiden vi kunne ta utgangspunkt i for å iterere videre og til slutt
+    lande en perfekt nettside for Elias.</p>
+
+  <p>Elias lagde også etterhvert en versjon av nettsiden for mobiltelefoner,
+    også <a href="https://xd.adobe.com/view/fe5f9428-5318-4cb6-b8cb-252eb8be9d86-ab0c/" target="_blank">i Adobe XD</a>.
+    Jeg gikk raskt i gang med å implementere dette.</p>
+
+  <hr>
+
+  <img class="right" ngSrc="/assets/project/elias-portfolio/photo-gallery.jpg" alt="Fotogalleri med høyoppløsningsbilder" height="592" width="438">
+
+  <p>Under utviklingen støtte jeg kun på ett problem: Nettsiden viser mange av bildene Elias har tatt,
+    og Elias ønsket at disse skulle vises i full oppløsning slik at potensielle kunder kunne se den fulle kvaliteten av bildet.
+    Dette førte til at store mengder data måtte lastes når nettsiden åpnes, noe som gjorde brukeropplevelsen dårlig.</p>
+
+  <p>Dette løste jeg ved å bruke jQuery på å laste inn alle bildene i en skjult div etter at siden hadde lastet,
+    men før brukeren så bildene. Deretter, når brukeren navigerte til bildene, ble det usynlige innholdet kopiert
+    inn i den synlige DOM-en.</p>
+
+  <p>Ved å ta bildene ut av HTML og laste de dynamisk gjennom jQuery etter at siden hadde lastet,
+    ble prosessen helt usynlig for brukeren og opplevelsen av innlastingstid mye bedre. Samtidig kunne vi beholde
+    bilder i full oppløsning, akkurat slik Elias ønsket.</p>
+
+  <hr>
+
+  <p>Kun et par uker etter at Elias tok kontakt var nettsiden live på eliasheggernes.com. Den samsvarte godt med designet,
+    og koden var lett å vedlikeholde slik at Elias i fremtiden selv kan legge til nye prosjekter.</p>
+
+  <p>Prosjektet har åpen kildekode og kan finnes på GitHub.</p>
+</div>

@@ -3,6 +3,7 @@ import {ActivatedRoute, RouterLink} from "@angular/router";
 import {KaffeDiemAppComponent} from "../project/kaffe-diem-app/kaffe-diem-app.component";
 import {RecalSocialComponent} from "../project/recal-social/recal-social.component";
 import {SchematicLookupComponent} from "../project/schematic-lookup/schematic-lookup.component";
+import {EliasPortfolioComponent} from "../project/elias-portfolio/elias-portfolio.component";
 
 @Component({
   selector: 'app-project-page',
@@ -10,7 +11,8 @@ import {SchematicLookupComponent} from "../project/schematic-lookup/schematic-lo
     RouterLink,
     KaffeDiemAppComponent,
     RecalSocialComponent,
-    SchematicLookupComponent
+    SchematicLookupComponent,
+    EliasPortfolioComponent
   ],
   templateUrl: './project-page.component.html',
   styleUrl: './project-page.component.scss'
